@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\user1\\Documents\\מסמכים\\תכנות שנה ב\\TodoApi\\TodoApi.csproj": {}
+    "C:\\Users\\user1\\Documents\\מסמכים\\תכנות שנה ב\\NjsProject\\TodoApi\\TodoApi.csproj": {}
   },
   "projects": {
-    "C:\\Users\\user1\\Documents\\מסמכים\\תכנות שנה ב\\TodoApi\\TodoApi.csproj": {
+    "C:\\Users\\user1\\Documents\\מסמכים\\תכנות שנה ב\\NjsProject\\TodoApi\\TodoApi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\user1\\Documents\\מסמכים\\תכנות שנה ב\\TodoApi\\TodoApi.csproj",
+        "projectUniqueName": "C:\\Users\\user1\\Documents\\מסמכים\\תכנות שנה ב\\NjsProject\\TodoApi\\TodoApi.csproj",
         "projectName": "TodoApi",
-        "projectPath": "C:\\Users\\user1\\Documents\\מסמכים\\תכנות שנה ב\\TodoApi\\TodoApi.csproj",
+        "projectPath": "C:\\Users\\user1\\Documents\\מסמכים\\תכנות שנה ב\\NjsProject\\TodoApi\\TodoApi.csproj",
         "packagesPath": "C:\\Users\\user1\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\user1\\Documents\\מסמכים\\תכנות שנה ב\\TodoApi\\obj\\",
+        "outputPath": "C:\\Users\\user1\\Documents\\מסמכים\\תכנות שנה ב\\NjsProject\\TodoApi\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\user1\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -40,6 +40,26 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[7.0.5, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[7.0.5, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[7.0.5, )"
+            },
+            "Pomelo.EntityFrameworkCore.MySql": {
+              "target": "Package",
+              "version": "[7.0.0, )"
+            },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
               "version": "[6.2.3, )"

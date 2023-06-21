@@ -1,27 +1,25 @@
 using Microsoft.EntityFrameworkCore;
-using Microsoft.OpenApi.Models;
-using ToDoApi;
-
+using TodoApi;
 
 var builder = WebApplication.CreateBuilder(args);
 var app = builder.Build();
 
-app.MapGet("/items",async(ToDoDbContext d)=>
+app.MapGet("/items",async(ToDoDBContext d)=>
 await d.Items.ToListAsync());
-app.MapPost("/items",async(Item item,ToDoDbContext d)=>
+app.MapPost("/items",async(Item item,ToDoDBContext d)=>
 {d.Items.Add(item);
 await d.SaveChangesAsync();
 return Results.Created($"/items/{item.Id}",item);
 });
-app.MapPut("/items/{id}",async(int id,Boolean isComplete,ToDoDbContext d)=>
+app.MapPut("/items/{id}",async(int id,Boolean isComplete,ToDoDBContext d)=>
 {var newItem=await d.Items.FindAsync(id);
 if(newItem is null)
 return Results.NotFound();
-newItem.isComplete=isComplete;
+newItem.IsComplete=isComplete;
 await d.SaveChangesAsync();
 return Results.NoContent();
 });
-app.MapDelete("/{id}",async(int id,ToDoDbContext d)=>
+app.MapDelete("/{id}",async(int id,ToDoDBContext d)=>
 {
     var newItem=await d.Items.FindAsync(id);
     if(newItem is null)
@@ -29,9 +27,9 @@ app.MapDelete("/{id}",async(int id,ToDoDbContext d)=>
     d.Items.Remove(newItem);
     await d.SaveChangesAsync();
     return Results.NoContent();
-})
+});
 app.UseCors("CorsPolicy");
-builder.Services.AddDbContext<ToDoDbContext>();
+builder.Services.AddDbContext<ToDoDBContext>();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddCors(options=>{
     options.AddPolicy("CorsPolicy",
